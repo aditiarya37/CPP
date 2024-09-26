@@ -43,6 +43,9 @@ class sieveErastosthenes {
 };
 int main(){
     sieveErastosthenes obj;
-    obj.segmented_sieve(100,200);
+    int n;
+    cout << "Enter the number: ";
+    cin >> n;
+    obj.segmented_sieve(2,n);
     return 0;
 }

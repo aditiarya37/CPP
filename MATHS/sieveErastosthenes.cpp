@@ -1,22 +1,26 @@
 #include<iostream>
+#include<vector>
 using namespace std;
 int main(){
     int n;
-    cout << "Enter the number: ";
     cin >> n;
-    bool prime[n];
+    bool prime[n+1];
     int count=0;
-    for(int i=2;i<n;i++){
+    vector<int> ans;
+    for(int i=2;i<=n;i++){
         prime[i] = true;
     }
-    for(int i=2;i<n;i++){
+    for(int i=2;i<=n;i++){
         if(prime[i]==true){
             count++;
-            for(int j=2*i;j<n;j+=i){
+            ans.push_back(i);
+            for(int j=2*i;j<=n;j+=i){
                 prime[j] = false;
             }
         }
     }
-    cout << count;
+    for(int i=0;i<ans.size();i++){
+        cout << ans[i] << " ";
+    }
     return 0;
 }
